@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Just another maze - CodePen</title>
+
+
+    <style>
+html, body {
+  font-family: monospace;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: Lobster;
+  position: relative;
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-weight: 400;
+  text-align: center;
+  color: #333;
+  text-shadow: 1px 1px 3px #777;
+}
+
+#btns {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.btn {
+  border: 7px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 0 10px;
+}
+.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn:active {
+  top: 1px;
+}
+
+#solve {
+  background: #56bb56;
+}
+#solve:hover {
+  background: #429142;
+}
+#solve:active {
+  background: #7ADC7A;
+}
+
+#regen {
+  background: #B52424;
+}
+#regen:hover {
+  background: #8E1717;
+}
+#regen:active {
+  background: #E63C3C;
+}
+
+#maze-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 565px;
+  display: table;
+}
+
+#maze {
+  font-size: 0;
+  width: 565px;
+  height: 565px;
+  border: 15px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1000000px #f0f0f0;
+  z-index: -1;
+}
+
+.cell {
+  color: #333;
+  height: 23px;
+  width: 23px;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 -7px -7px 0;
+  position: relative;
+}
+.cell[data-north=true] {
+  border-top: 7px solid;
+}
+.cell[data-south=true] {
+  border-bottom: 7px solid;
+}
+.cell[data-east=true] {
+  border-right: 7px solid;
+}
+.cell[data-west=true] {
+  border-left: 7px solid;
+}
+.cell[data-solution=true]:not([data-start=true]):not([data-end=true]):before {
+  background: #E2E215;
+  content: "a";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+}
+.cell[data-start=true] {
+  background: #56bb56;
+  z-index: 1;
+}
+.cell[data-end=true] {
+  background: #B52424;
+  z-index: 1;
+}
+
+</style>
+
+<script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+<div id='maze-holder'>
+	<h1>只是一个迷宫</h1>
+	<div id='btns'>
+		<div class='btn' id='solve'>解答</div>
+		<div class='btn' id='regen'>刷新</div>
+	</div>
+	<div id='maze'></div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/index.js"></script>
+
+</body>
+
+</html>

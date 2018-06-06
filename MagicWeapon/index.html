@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>夺宝奇兵</title>
+	<link type="text/css" href="css/style.css" rel="stylesheet">
+	<script src="js/lufylegend-1.10.1.min.js"></script>
+	<script src="js/Box2dWeb-2.1.a.3.js"></script>
+	<script src="js/GS.js"></script>
+</head>
+
+<body>
+
+	<div class="out">
+		<ul class="box">
+			<li>
+				<div id="canvas">
+				</div>
+				<div class="end">返回</div>
+			</li>
+			<li>2</li>
+			<li>2</li>
+			<li>
+				<div class="name">夺宝奇兵</div>
+				<div class="title">规则</div>
+				<div class="context">
+					<p>1.玩家要躲避子弹，并收集三支钥匙</p>
+					<p>2.至游戏结束，玩家只有一次机会</p>
+					<p>3.当收集完三支钥匙，会随机出现
+						<br>一个宝箱，获得宝箱就赢，否则输</p>
+				</div>
+				<div class="start">开始游戏</div>
+				<p style="margin-left: 700px;">
+					<b>by @YD_CWL</b>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<script>
+		document.getElementsByClassName("start")[0].onclick = function () {
+			document.getElementsByClassName("box")[0].style.cssText = "transform:rotateY(180deg);";
+		}
+		document.getElementsByClassName("end")[0].onclick = function () {
+			document.getElementsByClassName("box")[0].style.cssText = "transform:rotateY(360deg);";
+		}
+	</script>
+</body>
+
+</html>
